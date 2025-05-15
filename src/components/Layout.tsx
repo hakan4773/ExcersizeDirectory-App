@@ -49,8 +49,9 @@ function Layout({ children }: { children: React.ReactNode }) {
           </div>
         )}
       </header>
-      <main>{children} İçerik burada olacak</main>
-      <footer>Footer burada olacak</footer>
+      <main>{children}</main>
+      <footer className=" from-gray-900 via-gray-800 to-blue-900 bg-gradient-to-br">
+        Footer burada olacak</footer>
     </div>
   );
 }
