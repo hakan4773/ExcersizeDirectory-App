@@ -2,9 +2,8 @@ import { CiSearch } from "react-icons/ci";
 
 function Menu() {
   return (
-        <div className="  bg-cyan-300 flex  flex-col items-center justify-center pt-10 px-4">
-            <div className="  flex flex-col  justify-center items-center text-center ">
-            <h1 className=" text-2xl">Egzersiz Rehberi</h1>
+        <div className=" w-[90vw] flex  flex-col items-center justify-center px-4">
+            <div className="  flex flex-col  justify-center items-center text-center  space-y-4">
         <div className=" relative   mt-4" >
             <CiSearch className="absolute left-2 top-2 text-gray-500" size={20} />
             <input
@@ -14,13 +13,13 @@ function Menu() {
             />
         </div>
         <div className=" items-center text-lg flex flex-col ">
-            <a href="#" className="text-blue-600 hover:text-white w-full">
+            <a href="#" className="text-white hover:text-gray-400 w-full">
             Anasayfa
             </a>
-            <a href="#" className="text-blue-600 hover:text-white w-full">
+            <a href="#" className="text-white hover:text-gray-400  w-full">
             Egzersizler
             </a>
-            <a href="/favorites" className="text-blue-600 hover:text-white w-full">
+            <a href="/favorites" className="text-white hover:text-gray-400  w-full">
             Favoriler
             </a>
         </div>
