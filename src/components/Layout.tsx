@@ -1,12 +1,21 @@
 import React from "react";
-import { CiSearch } from "react-icons/ci";
 import Menu from "./Menu";
 import { AiOutlineMenu } from "react-icons/ai";
-function Layout({ children }: { children: React.ReactNode }) {
+import SearchInput from "./SearchInput";
+
+interface LayoutProps {
+  children: React.ReactNode;
+  searchTerm: string;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+}
+function Layout({ children,searchTerm,setSearchTerm}: LayoutProps) {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <div className="flex flex-col h-screen ">
       <header className="  from-gray-900 via-gray-800 to-blue-900 bg-gradient-to-br   py-6 px-2">
@@ -15,15 +24,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             <h1 className=" text-2xl text-white">Egzersiz Rehberi</h1>
           </div>
           <div className="hidden md:flex relative">
-            <CiSearch
-              className="absolute left-2 top-2 text-gray-500"
-              size={20}
-            />
-            <input
-              type="text"
-              placeholder="Egzersiz Ara"
-              className=" border border-gray-300 rounded-lg px-8 py-1 bg-white w-80"
-            />
+      <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
           </div>
           <div className=" items-center space-x-6 text-lg hidden md:flex">
             <a href="#" className="text-white hover:text-gray-400 ">
@@ -45,7 +46,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         </button>
         {isOpen && (
           <div className="md:hidden">
-            <Menu />
+            <Menu setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
           </div>
         )}
       </header>

@@ -1,16 +1,15 @@
-import { CiSearch } from "react-icons/ci";
-
-function Menu() {
+import SearchInput from "./SearchInput";
+interface SearchInputProps {
+    searchTerm:string;
+    setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+}
+function Menu({searchTerm, setSearchTerm}: SearchInputProps) {
+    
   return (
         <div className=" w-[90vw] flex  flex-col items-center justify-center px-4">
             <div className="  flex flex-col  justify-center items-center text-center  space-y-4">
         <div className=" relative   mt-4" >
-            <CiSearch className="absolute left-2 top-2 text-gray-500" size={20} />
-            <input
-            type="text"
-            placeholder="Egzersiz Ara"
-            className=" border border-gray-300 rounded-lg px-8 py-1 bg-white w-52"
-            />
+                <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
         </div>
         <div className=" items-center text-lg flex flex-col ">
             <a href="#" className="text-white hover:text-gray-400 w-full">
