@@ -1,20 +1,40 @@
 import React from 'react'
 import { CiSearch } from 'react-icons/ci';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
 interface SearchInputProps {
-    searchTerm:string;
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
 }
-function SearchInput({searchTerm, setSearchTerm }: SearchInputProps) {
+
+function SearchInput({setSearchTerm }: SearchInputProps) {
+     const formik=useFormik({
+        initialValues:{
+            searchTerm:''
+        },
+        validationSchema:Yup.object({
+searchTerm:Yup.string().required("Arama terimi boş olamaz")
+        }),
+        onSubmit:(values)=>{
+            setSearchTerm(values.searchTerm)
+        }
+     })
+ 
   return (
-      <form>
+      <form onSubmit={formik.handleSubmit}>
             <CiSearch className="absolute left-2 top-2 text-gray-500" size={20} />
             <input
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            value={formik.values.searchTerm}
+            onChange={formik.handleChange}
+            name="searchTerm"
             type="text"
             placeholder="Egzersiz Ara"
+            onBlur={formik.handleBlur}
             className=" border border-gray-300 rounded-lg px-8 py-1 bg-white lg:w-80 w-52"
             />
+              {formik.touched.searchTerm && formik.errors.searchTerm && (
+        <div className="text-red-500 text-sm mt-1">{formik.errors.searchTerm}</div>
+      )}
         </form>
   )
 }

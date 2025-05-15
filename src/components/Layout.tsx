@@ -24,7 +24,7 @@ function Layout({ children,searchTerm,setSearchTerm}: LayoutProps) {
             <h1 className=" text-2xl text-white">Egzersiz Rehberi</h1>
           </div>
           <div className="hidden md:flex relative">
-      <SearchInput searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+      <SearchInput setSearchTerm={setSearchTerm}/>
           </div>
           <div className=" items-center space-x-6 text-lg hidden md:flex">
             <a href="#" className="text-white hover:text-gray-400 ">
