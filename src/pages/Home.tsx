@@ -11,8 +11,8 @@ if (!data) return <p>No data found.</p>;
 const filteredExercises=data?.filter((exercise)=>exercise.name.toLowerCase().includes(searchTerm.toLowerCase()))
   return (
     <div>
-      {filteredExercises.map((exercise,index)=>(
-        <div key={index}>
+      {filteredExercises.map((exercise)=>(
+        <div>
             <ExerciseCards key={exercise.id} exercise={exercise} />
              </div>
       ))}

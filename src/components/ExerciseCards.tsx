@@ -1,8 +1,33 @@
+import { useEffect, useState } from 'react'
 import type { ExerciseType } from '../types/Excersize'
 interface ExerciseCardsProps {
     exercise:ExerciseType
 }
 function ExerciseCards({exercise}:ExerciseCardsProps) {
+const [isfavorites,setIsFavorites]=useState(false)
+
+useEffect(()=>{
+const favorites=JSON.parse(localStorage.getItem("favorites") || '[]');
+setIsFavorites(favorites.find((fav:ExerciseType)=>fav.id===exercise.id))
+},[])
+
+
+const HandleFavorite=(exercise:ExerciseType)=>{
+const favorites = JSON.parse(localStorage.getItem("favorites") || '[]');
+
+if(favorites.find((fav:ExerciseType) => fav.id === exercise.id)){
+const updateFavorites=favorites.filter((fav:ExerciseType)=>fav.id!==exercise.id)
+localStorage.setItem("favorites",JSON.stringify(updateFavorites))
+      setIsFavorites(false);
+}
+else{
+  const updateFavorites=[...favorites,exercise]
+   localStorage.setItem('favorites', JSON.stringify(updateFavorites))
+  setIsFavorites(true)
+}
+
+
+}
   return (
     <div className='bg-white shadow-md rounded-lg p-4 mb-4 flex  items-center'>
        <div className='w-full md:w-1/3'> 
@@ -16,7 +41,12 @@ function ExerciseCards({exercise}:ExerciseCardsProps) {
         <p className='text-gray-600'>{exercise.target}</p>
         <p className='text-gray-600'>{exercise.equipment}</p>
 </div>
-  
+  <button className='ml-4' onClick={()=>HandleFavorite(exercise)}>
+    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+    </svg>
+    <p>{isfavorites ? "favorilere eklendi":"favorile"}</p>
+  </button>
     </div>
   )
 }
