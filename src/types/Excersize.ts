@@ -5,4 +5,6 @@ export interface ExerciseType {
     equipment:string;
     gifUrl:string;
     bodyPart:string;
+    secondaryMuscles: string[] ;
+    instructions:string[];
 }

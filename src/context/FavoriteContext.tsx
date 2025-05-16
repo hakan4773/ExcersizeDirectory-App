@@ -18,31 +18,31 @@ const [favorites, setFavorites] = useState<ExerciseType[]>([]);
     setFavorites(JSON.parse(storedFavorites));
   }
 },[])
+
+//favori stateini güncelleme
 const updateFavoriteList=(updatedFavorites:ExerciseType[])=>{
 localStorage.setItem("favorites",JSON.stringify(updatedFavorites))
 setFavorites(updatedFavorites);
 }
 
 
+//favorilerde var mı
 const isFavorite=(exercise:ExerciseType)=>{
   return favorites.some((fav)=>fav.id===exercise.id)
 }
+//favorilere ekleme/çıkarma
 const toggleFavorite=(exercise:ExerciseType)=>{
 const exists=isFavorite(exercise);
 
 const updated=exists ? favorites.filter((fav)=>fav.id!==exercise.id) :[...favorites,exercise]
 updateFavoriteList(updated)
 }
-
+//favorilerden kaldırma
 const removeFavorite=(exercise:ExerciseType)=>{
 const updated=favorites.filter((fav)=>fav.id!==exercise.id) 
 updateFavoriteList(updated)
 
 }
-
-
-
-
 
  return (
     <FavoriteContext.Provider
