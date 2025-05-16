@@ -2,13 +2,13 @@ import React from "react";
 import Menu from "./Menu";
 import { AiOutlineMenu } from "react-icons/ai";
 import SearchInput from "./SearchInput";
+import { Link } from "react-router-dom";
 
 interface LayoutProps {
   children: React.ReactNode;
-  searchTerm: string;
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
 }
-function Layout({ children,searchTerm,setSearchTerm}: LayoutProps) {
+function Layout({ children,setSearchTerm}: LayoutProps) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   
@@ -27,15 +27,15 @@ function Layout({ children,searchTerm,setSearchTerm}: LayoutProps) {
       <SearchInput setSearchTerm={setSearchTerm}/>
           </div>
           <div className=" items-center space-x-6 text-lg hidden md:flex">
-            <a href="#" className="text-white hover:text-gray-400 ">
+            <Link to="/" className="text-white hover:text-gray-400 ">
               Anasayfa
-            </a>
-            <a href="#" className="text-white hover:text-gray-400 ">
+            </Link>
+            <Link to="exercise" className="text-white hover:text-gray-400 ">
               Egzersizler
-            </a>
-            <a href="/favorites" className="text-white hover:text-gray-400 ">
+            </Link>
+            <Link to="/favorites" className="text-white hover:text-gray-400 ">
               Favoriler
-            </a>
+            </Link>
           </div>
         </nav>
         <button
@@ -46,7 +46,7 @@ function Layout({ children,searchTerm,setSearchTerm}: LayoutProps) {
         </button>
         {isOpen && (
           <div className="md:hidden">
-            <Menu setSearchTerm={setSearchTerm} searchTerm={searchTerm}/>
+            <Menu setSearchTerm={setSearchTerm} />
           </div>
         )}
       </header>

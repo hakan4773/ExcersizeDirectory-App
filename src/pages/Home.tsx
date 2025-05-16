@@ -9,13 +9,10 @@ if (error) return <p>Error fetching data.</p>;
 if (!data) return <p>No data found.</p>;
    //İsme göre filtreleme
 const filteredExercises=data?.filter((exercise)=>exercise.name.toLowerCase().includes(searchTerm.toLowerCase()))
+
   return (
     <div>
-      {filteredExercises.map((exercise)=>(
-        <div>
-            <ExerciseCards key={exercise.id} exercise={exercise} />
-             </div>
-      ))}
+    
     </div>
   )
 }
