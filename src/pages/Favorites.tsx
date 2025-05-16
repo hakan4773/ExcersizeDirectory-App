@@ -6,10 +6,19 @@ import type { ExerciseType } from "../types/Excersize";
 function Favorites() {
    const { favorites,removeFavorite,isFavorite} = useFavorite()
 
+  if(favorites.length===0){
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <h1 className="text-2xl font-bold text-gray-500">Favori egzersiz yok</h1>
+      </div>
+    )
+
+  }
+
   return (
    <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Favori Egzersizler</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4 p-4">
         {favorites.map((exercise:ExerciseType) => (
         <div className="relative flex flex-col h-full bg-gray-900 backdrop-blur-md rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-full flex justify-center items-center">

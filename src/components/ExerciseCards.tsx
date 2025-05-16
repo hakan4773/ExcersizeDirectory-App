@@ -1,7 +1,6 @@
 import { useFavorite } from '../context/FavoriteContext'
 import type { ExerciseType } from '../types/Excersize'
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { CiHeart } from "react-icons/ci";
 
 interface ExerciseCardsProps {
     exercise:ExerciseType
