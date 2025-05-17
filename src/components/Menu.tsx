@@ -1,15 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SearchInput from "./SearchInput";
-import { useState } from "react";
 interface SearchInputProps {
   setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
 }
 function Menu({ setSearchTerm }: SearchInputProps) {
-  const [isPage, setIsPage] = useState<string>("home");
-
-  const handlePageChange = (page: string) => {
-    setIsPage(page);
-  };
+ const location = useLocation();
+  const currentPath = location.pathname;
   return (
     <div className=" w-[90vw] flex  flex-col items-center justify-center px-4">
       <div className="  flex flex-col  justify-center items-center text-center  space-y-4">
@@ -20,9 +16,8 @@ function Menu({ setSearchTerm }: SearchInputProps) {
         <div className=" items-center text-lg flex flex-col ">
           <Link
             to="/"
-            onClick={() => handlePageChange("home")}
             className={
-              isPage === "home"
+              currentPath === "/"
                 ? "  text-blue-600 hover:text-gray-400 "
                 : "text-white hover:text-gray-400"
             }
@@ -31,20 +26,19 @@ function Menu({ setSearchTerm }: SearchInputProps) {
           </Link>
           <Link
             to="exercise"
-            onClick={() => handlePageChange("exercise")}
             className={
-              isPage === "exercise"
+              currentPath === "/exercise"
                 ? "  text-blue-600 hover:text-gray-400 "
                 : "text-white hover:text-gray-400"
             }
+
           >
             Egzersizler
           </Link>
           <Link
             to="/favorites"
-            onClick={() => handlePageChange("favorites")}
             className={
-              isPage === "favorites"
+              currentPath === "/favorites"
                 ? " text-blue-600 hover:text-gray-400 "
                 : "text-white hover:text-gray-400"
             }

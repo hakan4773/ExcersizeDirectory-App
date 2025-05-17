@@ -1,19 +1,16 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import SearchInput from "./SearchInput"
 import { AiOutlineMenu } from "react-icons/ai"
 import Menu from "./Menu"
-import React, { useState } from "react"
+import React from "react"
 interface HeaderProps {
     setSearchTerm: React.Dispatch<React.SetStateAction<string>>
     toggleMenu: () => void
     isOpen: boolean
 }
 function Header({setSearchTerm,toggleMenu,isOpen}:HeaderProps) {
-const [isPage, setIsPage] = useState<string>("home")
-
-const handlePageChange = (page: string) => {
-    setIsPage(page)
-  }
+ const location = useLocation();
+  const currentPath = location.pathname;
   return (
     <header className="  from-gray-900 via-gray-800 to-blue-900 bg-gradient-to-br   py-6 px-2">
         <nav className="flex justify-between  ">
@@ -26,13 +23,13 @@ const handlePageChange = (page: string) => {
           {/* Linkler masaüstü görünüm */}
           <div className=" items-center space-x-6 text-lg hidden md:flex">
             
-            <Link to="/" onClick={()=>handlePageChange("home")}  className={isPage==="home" ? "  text-blue-600 hover:text-gray-400 ":"text-white hover:text-gray-400"}>
+            <Link to="/"   className={currentPath==="/" ? "  text-blue-600 hover:text-gray-400 ":"text-white hover:text-gray-400"}>
               Anasayfa
             </Link>
-            <Link to="exercise" onClick={()=>handlePageChange("exercise")} className={isPage==="exercise" ? "  text-blue-600 hover:text-gray-400 ":"text-white hover:text-gray-400"}>
+            <Link to="exercise" className={currentPath==="/exercise" ? "  text-blue-600 hover:text-gray-400 ":"text-white hover:text-gray-400"}>
               Egzersizler
             </Link>
-            <Link to="/favorites" onClick={()=>handlePageChange("favorites")} className={isPage==="favorites" ? " text-blue-600 hover:text-gray-400 ":"text-white hover:text-gray-400"}>
+            <Link to="/favorites"  className={currentPath==="/favorites" ? " text-blue-600 hover:text-gray-400 ":"text-white hover:text-gray-400"}>
               Favoriler
             </Link>
           </div>
