@@ -13,7 +13,7 @@ function SearchInput({setSearchTerm }: SearchInputProps) {
             searchTerm:''
         },
         validationSchema:Yup.object({
-searchTerm:Yup.string().required("Arama terimi boş olamaz")
+        searchTerm:Yup.string().required("Arama terimi boş olamaz")
         }),
         onSubmit:(values)=>{
             setSearchTerm(values.searchTerm)
@@ -25,14 +25,17 @@ searchTerm:Yup.string().required("Arama terimi boş olamaz")
             <CiSearch className="absolute left-2 top-2 text-gray-500" size={20} />
             <input
             value={formik.values.searchTerm}
-            onChange={formik.handleChange}
+       onChange={(e) => {
+       formik.handleChange(e);
+       setSearchTerm(e.target.value); 
+        }}
             name="searchTerm"
             type="text"
             placeholder="Egzersiz Ara"
             onBlur={formik.handleBlur}
             className=" border border-gray-300 rounded-lg px-8 py-1 bg-white lg:w-80 w-52"
             />
-              {formik.touched.searchTerm && formik.errors.searchTerm && (
+              {formik.submitCount > 0 && formik.errors.searchTerm && (
         <div className="text-red-500 text-sm mt-1">{formik.errors.searchTerm}</div>
       )}
         </form>
