@@ -3,10 +3,15 @@ import ExerciseCards from '../components/ExerciseCards';
 import { useExercises } from '../hooks/useExercises';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { CiDumbbell } from "react-icons/ci";
+import ClipLoader from "react-spinners/ClipLoader";
   function Home({searchTerm}: { searchTerm: string }) {
-    const {data,error,isPending}=useExercises();
+    const {data,error,isLoading }=useExercises();
 
-if (isPending) return <p>Loading...</p>;
+if (isLoading) return (
+ <div className="flex justify-center items-center h-32">
+    <ClipLoader color="#36d7b7" size={50} />
+  </div>
+  )
 if (error) return <p>Error fetching data.</p>;
 if (!data) return <p>No data found.</p>;
    //İsme göre filtreleme
@@ -30,7 +35,7 @@ const filteredExercises=data?.filter((exercise)=>exercise.name.toLowerCase().inc
         <div className="w-full p-4">
           <img
             src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            alt="Bir spor salonunda egzersiz yapan kişi"
+            alt="egzersiz"
             loading="lazy"
             className="rounded-xl shadow-2xl w-full max-w-4xl mx-auto object-cover h-64 md:h-96"
           />
