@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Favorites from "./pages/Favorites";
 import Exercise from "./pages/Exercise";
 import { FavoriteProvider } from "./context/FavoriteContext";
+import NotFound from "./pages/NotFound";
 function App() {
   const [searchTerm, setSearchTerm] = React.useState<string>("");
   return (
@@ -18,6 +19,10 @@ function App() {
             <Route
               path="/exercise"
               element={<Exercise searchTerm={searchTerm} />}
+            />
+            <Route
+              path="*"
+              element={<NotFound />}
             />
           </Routes>
         </Layout>
