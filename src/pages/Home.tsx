@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import ExerciseCards from '../components/ExerciseCards';
 import { useExercises } from '../hooks/useExercises';
 import { AiOutlineArrowRight } from 'react-icons/ai';
-
-function Home({searchTerm}: { searchTerm: string }) {
+import { CiDumbbell } from "react-icons/ci";
+  function Home({searchTerm}: { searchTerm: string }) {
     const {data,error,isPending}=useExercises();
 
 if (isPending) return <p>Loading...</p>;
@@ -15,16 +15,18 @@ const filteredExercises=data?.filter((exercise)=>exercise.name.toLowerCase().inc
   return (
   <div className="p-4">
   
-      <div className="text-center mb-10 bg-gradient-to-r from-blue-600 to-indigo-800 rounded-2xl p-8 text-white">
+      <div className="flex-col lg:flex-row text-center mb-10 bg-gradient-to-r from-blue-600 to-indigo-800 flex rounded-2xl p-8 text-white">
+      <div className='flex flex-col  items-center justify-center'>
+        <CiDumbbell size={40}/> 
         <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn drop-shadow-md">
-          Fitness Yolculuğunuza Hoş Geldiniz
+         Egzersiz Yolculuğunuza Hoş Geldiniz
         </h1>
         <p className="text-xl md:text-2xl mb-6 drop-shadow-md">
           Profesyonel rehberlik ile hedeflerinize ulaşın
         </p>
-        <Link to={"/exercise"} className="bg-white text-blue-600 font-semibold py-2 px-4 rounded-lg hover:bg-blue-100 transition-all duration-300">
+         <Link to={"/exercise"} className="bg-white text-blue-600 font-semibold py-2 px-4 rounded-lg hover:bg-blue-100 transition-all duration-300">
           Hemen Başla
-        </Link>
+        </Link> </div>
         <div className="w-full p-4">
           <img
             src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
@@ -36,7 +38,7 @@ const filteredExercises=data?.filter((exercise)=>exercise.name.toLowerCase().inc
       </div>
 
       {/* Egzersiz Kartları */}
-      <h1 className="text-2xl font-bold mb-4 text-center">Egzersizler</h1>
+      <h1 className="text-2xl font-bold mb-4 text-center">Popüler Egzersizler</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {filteredExercises.slice(0, 3).map((exercise) => (
           <ExerciseCards key={exercise.id} exercise={exercise} />
