@@ -11,7 +11,7 @@ function ExerciseCards({exercise}:ExerciseCardsProps) {
   
   return (
       <div className="relative flex flex-col h-full bg-gray-900 backdrop-blur-md border-gray-500  rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
- 
+{/* egzersiz resim */}
       <div className="w-full flex justify-center items-center">
         <img 
           src={exercise.gifUrl} 
@@ -19,6 +19,7 @@ function ExerciseCards({exercise}:ExerciseCardsProps) {
           className="w-full h-48 object-cover rounded-t-lg"
         />
       </div>
+{/* egzersiz bilgileri */}
       
       <div className="p-4 flex-1">
         <h2 className="text-xl font-bold text-white">{exercise.name}</h2>
@@ -27,7 +28,7 @@ function ExerciseCards({exercise}:ExerciseCardsProps) {
           <p className=' text-gray-300'>Ekipman: {exercise.equipment}</p>
           <p className=' text-gray-300'>İkincil Kaslar: {exercise.secondaryMuscles.join(', ')}</p>
       </div>
-      
+      {/* favorileme butonu */}
       <div className="p-4 absolute">
         <button 
           onClick={() => toggleFavorite(exercise)}

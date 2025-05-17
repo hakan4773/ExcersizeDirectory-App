@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function Footer() {
   return (
   <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 text-white text-center py-4 mt-auto">
-    
+    {/* Linkler */}
     <div className="flex justify-center container mx-auto">
            <Link to="/" className="text-white hover:text-gray-400 mx-2">
             Anasayfa
@@ -20,7 +20,7 @@ function Footer() {
             </Link>
 
     </div>
-    
+    {/* sosyal medya linkleri */}
      <div className="flex justify-center container mx-auto m-2">
         <a href="https://www.instagram.com/egzersizrehberi/"  className="text-white hover:text-gray-400 mx-2">
            <FaInstagram className="text-2xl hover:text-blue-500 hover:scale-110 hover:transition-all " />

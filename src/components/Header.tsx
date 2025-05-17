@@ -23,6 +23,7 @@ const handlePageChange = (page: string) => {
           <div className="hidden md:flex relative">
       <SearchInput setSearchTerm={setSearchTerm}/>
           </div>
+          {/* Linkler masaüstü görünüm */}
           <div className=" items-center space-x-6 text-lg hidden md:flex">
             
             <Link to="/" onClick={()=>handlePageChange("home")}  className={isPage==="home" ? "  text-blue-600 hover:text-gray-400 ":"text-white hover:text-gray-400"}>
@@ -36,6 +37,7 @@ const handlePageChange = (page: string) => {
             </Link>
           </div>
         </nav>
+        {/* hamburger menu */}
         <button
           className="md:hidden absolute  right-4 top-4"
           onClick={toggleMenu}
