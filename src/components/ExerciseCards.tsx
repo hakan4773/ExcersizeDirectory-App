@@ -10,7 +10,7 @@ function ExerciseCards({exercise}:ExerciseCardsProps) {
   const  { isFavorite, toggleFavorite } = useFavorite()
   
   return (
-      <div className="relative flex flex-col h-full bg-gray-900 backdrop-blur-md rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <div className="relative flex flex-col h-full bg-gray-900 backdrop-blur-md border-gray-500  rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
  
       <div className="w-full flex justify-center items-center">
         <img 

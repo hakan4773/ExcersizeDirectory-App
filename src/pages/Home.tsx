@@ -18,9 +18,9 @@ if (!data) return <p>No data found.</p>;
 const filteredExercises=data?.filter((exercise)=>exercise.name.toLowerCase().includes(searchTerm.toLowerCase()))
 
   return (
-  <div className="p-4">
+  <div className="p-4 bg-slate-100">
   
-      <div className="flex-col lg:flex-row text-center mb-10 bg-gradient-to-r from-blue-600 to-indigo-800 flex rounded-2xl p-8 text-white">
+      <div className="flex-col lg:flex-row text-center mb-10 from-gray-900 via-gray-800 to-blue-900 bg-gradient-to-l  flex rounded-2xl p-8 text-white">
       <div className='flex flex-col  items-center justify-center'>
         <CiDumbbell size={40}/> 
         <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fadeIn drop-shadow-md">
