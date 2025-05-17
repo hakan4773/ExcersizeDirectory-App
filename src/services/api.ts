@@ -5,11 +5,11 @@ const options = {
   method: 'GET',
   url: 'https://exercisedb.p.rapidapi.com/exercises',
   params: {
-    limit: '10',
+    limit: '20',
     offset: '0'
   },
   headers: {
-    'x-rapidapi-key': '8402dad98emsh3657b687a9caab4p178290jsnbed4c99273c0',
+    'x-rapidapi-key': import.meta.env.VITE_RAPIDAPI_KEY || '',
     'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
   }
 };
