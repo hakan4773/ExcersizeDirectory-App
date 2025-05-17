@@ -32,7 +32,6 @@ function SearchInput({setSearchTerm }: SearchInputProps) {
             name="searchTerm"
             type="text"
             placeholder="Egzersiz Ara"
-            onBlur={formik.handleBlur}
             className=" border border-gray-300 rounded-lg px-8 py-1 bg-white lg:w-80 w-52"
             />
               {formik.submitCount > 0 && formik.errors.searchTerm && (

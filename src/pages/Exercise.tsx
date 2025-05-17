@@ -27,13 +27,13 @@ const filteredExercises = data.filter((exercise) => {
 
 
   return (
-  <div className='bg-slate-100'>
+  <div className='bg-slate-100 min-h-screen'>
     {/* Select ile kas grubuna göre filtreleme */}
     <FilterSelect selectedTarget={selectedTarget} setSelectedTarget={setSelectedTarget} data={data}/>
 
  {filteredExercises.length === 0 ? (
   <div className="flex items-center justify-center ">
-    <h1 className="text-2xl font-bold text-gray-500">
+    <h1 className="text-2xl font-bold text-gray-500 ">
         {searchTerm.trim() === "" && selectedTarget === "all"
             ? "Egzersiz bulunamadı"
             : "Filtreleme sonucu bulunamadı"}
