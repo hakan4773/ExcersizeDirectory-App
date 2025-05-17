@@ -21,7 +21,7 @@ function Layout({ children,setSearchTerm}: LayoutProps) {
       <header className="  from-gray-900 via-gray-800 to-blue-900 bg-gradient-to-br   py-6 px-2">
         <nav className="flex justify-between  ">
           <div className=" items-center ">
-            <h1 className=" text-2xl text-white">Egzersiz Rehberi</h1>
+            <Link to={"/"} className=" text-2xl text-white">Egzersiz Rehberi</Link>
           </div>
           <div className="hidden md:flex relative">
       <SearchInput setSearchTerm={setSearchTerm}/>
