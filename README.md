@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# Egzersiz Rehberi (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+![Egzersiz Rehberi](https://via.placeholder.com/800x400.png?text=Egzersiz+Rehberi) <!-- Görsel eklemek istersen buraya bir screenshot URL'si koyabilirsin -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Egzersiz Rehberi, kullanıcıların egzersizleri keşfetmesini, kas gruplarına göre filtrelemesini ve favorilere eklemesini sağlayan modern bir web uygulamasıdır. ExerciseDB API'sini kullanarak gerçek zamanlı egzersiz verilerini sunar ve kullanıcı dostu bir arayüzle fitness yolculuğunu kolaylaştırır.
 
-## Expanding the ESLint configuration
+## 🚀 Özellikler
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Egzersiz Listeleme:** ExerciseDB API'sinden alınan egzersizleri isim, hedef kas, ekipman ve GIF ile birlikte listeler.
+- **Kas Grubu Filtresi:** Egzersizleri kas gruplarına göre filtreleme (ör. göğüs, sırt, kardiyo).
+- **Arama Formu:** Formik ve Yup ile validasyonlu, gerçek zamanlı arama özelliği.
+- **Favorilere Ekleme:** Kullanıcılar egzersizleri favorilere ekleyebilir ve `localStorage` ile saklayabilir.
+- **Responsive Tasarım:** Mobil ve masaüstü cihazlar için optimize edilmiş arayüz.
+- **Modern Teknolojiler:** React, TailwindCSS, React Query ve React Router ile geliştirildi.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 📸 Ekran Görüntüleri
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Ana Sayfa
+![Ana Sayfa](https://via.placeholder.com/800x400.png?text=Ana+Sayfa) <!-- Gerçek ekran görüntüsü URL'si ekle -->
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Favoriler Sayfası
+![Favoriler](https://via.placeholder.com/800x400.png?text=Favoriler+Sayfası) <!-- Gerçek ekran görüntüsü URL'si ekle -->
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🛠️ Teknolojiler
+
+- **React:** Kullanıcı arayüzü için.
+- **TailwindCSS:** Responsive ve modern stil için.
+- **React Query:** Veri çekme, cache yönetimi ve yükleniyor/hata durumları için.
+- **Formik & Yup:** Arama formu ve validasyon için.
+- **React Router:** Sayfalar arası gezinme için.
+- **ExerciseDB API:** Egzersiz verilerini sağlamak için.
+- **TypeScript:** Tip güvenliği için (varsayıyorum ki TypeScript kullandın, değilse kaldırabilirsin).
+- **localStorage:** Favorileri saklamak için.
+
+## 📋 Gereksinimler
+
+- Node.js (v16 veya üstü)
+- npm veya yarn
+
+## 🏁 Kurulum ve Çalıştırma
+
+1. **Repoyu Klonla:**
+   ```bash
+   git clone https://github.com/hakan4773/ExcersizeDirectory-App.git
+   cd [repo-adı]
