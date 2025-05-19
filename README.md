@@ -1,7 +1,7 @@
 # Egzersiz Rehberi (React + TypeScript + Vite)
 
 
-![Egzersiz Rehberi](https://via.placeholder.com/800x400.png?text=Egzersiz+Rehberi) <!-- Görsel eklemek istersen buraya bir screenshot URL'si koyabilirsin -->
+![Egzersiz Rehberi](https://github.com/user-attachments/assets/475ce780-b851-4431-9730-0b1cd262913f) <!-- Görsel eklemek istersen buraya bir screenshot URL'si koyabilirsin -->
 
 Egzersiz Rehberi, kullanıcıların egzersizleri keşfetmesini, kas gruplarına göre filtrelemesini ve favorilere eklemesini sağlayan modern bir web uygulamasıdır. ExerciseDB API'sini kullanarak gerçek zamanlı egzersiz verilerini sunar ve kullanıcı dostu bir arayüzle fitness yolculuğunu kolaylaştırır.
 
