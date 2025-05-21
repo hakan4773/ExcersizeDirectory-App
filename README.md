@@ -1,7 +1,6 @@
 # Egzersiz Rehberi (React + TypeScript + Vite)
 
-
-![Egzersiz Rehberi](https://exercisedirectoryapp.netlify.app/)
+   Link: (https://exercisedirectoryapp.netlify.app/)
 
 Egzersiz Rehberi, kullanıcıların egzersizleri keşfetmesini, kas gruplarına göre filtrelemesini ve favorilere eklemesini sağlayan modern bir web uygulamasıdır. ExerciseDB API'sini kullanarak gerçek zamanlı egzersiz verilerini sunar ve kullanıcı dostu bir arayüzle fitness yolculuğunu kolaylaştırır.
 
